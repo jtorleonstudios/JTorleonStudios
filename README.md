@@ -7,7 +7,7 @@
 <td>
 <a href="https://www.patreon.com/jtorleon">
 
-![discord](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Patreon_logo_with_wordmark.svg/512px-Patreon_logo_with_wordmark.svg.png)
+![discord](https://gitlab.com/scs_torleon/hub-ore-prospecting-stick/-/raw/main/assets/footer-patreon.png)
   
 </a>
 </td>
