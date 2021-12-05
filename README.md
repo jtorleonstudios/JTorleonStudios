@@ -1,16 +1,21 @@
-### Hi there 👋
+<span align="center">
+    
+<a href="https://discord.gg/aGKgWtrcgp">
 
-<!--
-**JTorleon/JTorleon** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+![discord](https://invidget.switchblade.xyz/aGKgWtrcgp)
 
-Here are some ideas to get you started:
+</a> 
+    
+💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 💰 [EARN CASH FOR YOUR VISITORS](http://adfoc.us/70606381976246) 💰
+
+# [CLICK HERE](http://adfoc.us/70606381976246)
+
+## [Earn up to](http://adfoc.us/70606381976246) 💲 [22.50 per 1000 visits to your short URLs. | Referral program](http://adfoc.us/70606381976246)
+
+💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲💲
+ 
+</span>
+
+ 
