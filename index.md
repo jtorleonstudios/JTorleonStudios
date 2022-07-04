@@ -6,17 +6,14 @@ To satisfy all members of the community, we decided to create this web page wher
 
 <p style="text-align:center">
 
-# GitLab issues
+<h2>GitLab issues</h2>
+<a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to GitLab website">View on GitLab</a>
 
-<a href="https://github.com/jtorleonstudios/JTorleon" class="btn">View on GitLab</a>
+<h2>GitHub issues</h2>
+<a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to GitHub website">View on GitHub</a>
 
-# GitHub issues
-
-<a href="https://github.com/jtorleonstudios/JTorleon" class="btn">View on GitHub</a>
-
-# Discord issues
-
-<a href="https://github.com/jtorleonstudios/JTorleon" class="btn">View on GitHub</a>
+<h2>Discord issues</h2>
+<a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to discord server">View on Discord</a>
 
 </p>
 
