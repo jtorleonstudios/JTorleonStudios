@@ -6,17 +6,33 @@ To satisfy all members of the community, we decided to create this web page wher
 
 <div style="text-align:center">
 
-<h2>GitLab issues</h2>
-<a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to GitLab website">View on GitLab</a>
-<br>
-<h2>GitHub issues</h2>
-  
-<a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to GitHub website">View on GitHub</a>
-<br>
-<h2>Discord issues</h2>
-  
-<a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to discord server">View on Discord</a>
-<br>
-</div>
+  <p align="center"> 
+    <h2>GitLab issues</h2>
+    <a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to GitLab website">
+      View on GitLab
+    </a>
+    <br>
+  </p>
 
-<a href="banner BisecHosting partner" title="https://www.bisecthosting.com/jtlelisa"><img src="https://gitlab.com/scs_torleon/hub-awesome-dungeon/-/raw/main/assets/bisec.png" alt="banner BisecHosting partner"/></a>
+  <p align="center"> 
+    <h2>GitHub issues</h2>
+    <a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to GitHub website">
+      View on GitHub
+    </a>
+    <br>
+  </p>
+
+  <p align="center"> 
+    <h2>Discord issues</h2>
+    <a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to discord server">
+      View on Discord
+    </a>
+    <br>
+  </p>
+
+  <p align="center">
+    <a href="banner BisecHosting partner" title="https://www.bisecthosting.com/jtlelisa"><img src="https://gitlab.com/scs_torleon/hub-awesome-dungeon/-/raw/main/assets/bisec.png" alt="banner BisecHosting partner"/></a>
+  </p>
+  
+</div>
+ 
