@@ -6,7 +6,7 @@ To satisfy all members of the community, we decided to create this web page wher
 
 <div style="text-align:center">
 
-  <p align="center"> 
+  <p> 
     <h2>GitLab issues</h2>
     <a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to GitLab website">
       View on GitLab
@@ -14,7 +14,7 @@ To satisfy all members of the community, we decided to create this web page wher
     <br>
   </p>
 
-  <p align="center"> 
+  <p> 
     <h2>GitHub issues</h2>
     <a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to GitHub website">
       View on GitHub
@@ -22,7 +22,7 @@ To satisfy all members of the community, we decided to create this web page wher
     <br>
   </p>
 
-  <p align="center"> 
+  <p> 
     <h2>Discord issues</h2>
     <a href="https://github.com/jtorleonstudios/JTorleon" class="btn" title="Open the redirection to discord server">
       View on Discord
@@ -30,7 +30,7 @@ To satisfy all members of the community, we decided to create this web page wher
     <br>
   </p>
 
-  <p align="center">
+  <p>
     <a href="banner BisecHosting partner" title="https://www.bisecthosting.com/jtlelisa"><img src="https://gitlab.com/scs_torleon/hub-awesome-dungeon/-/raw/main/assets/bisec.png" alt="banner BisecHosting partner"/></a>
   </p>
   
