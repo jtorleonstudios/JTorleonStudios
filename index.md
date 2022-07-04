@@ -2,7 +2,7 @@
 
 # Select your preferred choice
 
-To satisfy all members of the community, we decided to create this web page where you can choose your favorite site or talk about your problem with the JTorLeon Studios team. Below you have the buttons to be redirected to the different services. Thank you for your support and love!
+To satisfy all members of the community, we decided to create this web page where you can choose your favorite site or talk about your problem/issues/suggestions with the JTorLeon Studios team. Below you have the buttons to be redirected to the different services. Thank you for your support and love!
 
 <p style="text-align:center">
 
