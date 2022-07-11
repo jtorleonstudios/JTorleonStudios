@@ -1,0 +1,21 @@
+{
+  "name": "jtorleonstudios_bridge_issues",
+  "version": "1.0.0",
+  "description": "Generate static website (frontend, HTML, CSS,  JS)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JTorLeon Studios",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "^1.5.3",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-htmlmin": "^3.1.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-cssmin": "^4.0.0"
+  }
+}
