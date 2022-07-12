@@ -1,17 +1,18 @@
-var path = require("path");
-var fs = require("fs");
+const path = require("path");
+const fs = require("fs");
+const puppeteer = require('puppeteer');
 
-var TEMPLATE_HTML = "";
-var BINDED_DATA = [];
-var BIND = function () {
+let TEMPLATE_HTML = "", TEMPLATE_INDEX = "";
+let BINDED_DATA = [];
+let BIND = () => {
   console.debug("start process bind");
   try {
+    TEMPLATE_INDEX = fs.readFileSync(path.resolve(__dirname, "./gen/index.html"), 'utf8');
     TEMPLATE_HTML = fs.readFileSync(path.resolve(__dirname, "./gen/template.html"), 'utf8');
   } catch (error) {
     console.error(error);
     process.exit(-1);
   }
-
 
   /* Register mod: Library Ferret */
   BINDED_DATA.push(createModInfo("library_ferret", "Library Ferret",
@@ -137,30 +138,44 @@ var BIND = function () {
   console.debug("end process bind");
 };
 
-module.exports = function (Grunt) {
-  var DIST = "./";
+module.exports = (Grunt) => {
+  let DIST = "./";
   Grunt.initConfig({
     pkg: Grunt.file.readJSON("package.json"),
     /* Delete old HTML generated */
-    clean: [DIST + "*.html", DIST + "*.css"],
+    clean: [`${DIST}*.html`, `${DIST}*.css`],
 
     /* Clean all html */
     htmlmin: { prod: { options: { removeComments: true, collapseWhitespace: true }, files: [{ src: ['*.html', '*.html'], expand: true, cwd: DIST, dest: DIST }] } },
     cssmin: { options: { mergeIntoShorthands: false, roundingPrecision: -1 }, target: { files: { 'style.css': ['./gen/style.css', './style.css'] } } }
   });
 
-  Grunt.registerTask("bind", "setup variable", BIND);
+  Grunt.registerTask("bind", "setup letiable", BIND);
   Grunt.loadNpmTasks("grunt-contrib-clean");
   Grunt.loadNpmTasks('grunt-contrib-htmlmin');
   Grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   Grunt.loadNpmTasks('grunt-contrib-copy');
 
-  Grunt.registerTask("generateHTML", "build html view", function () {
+  Grunt.registerTask("generateHTML", "build html view", () => {
     generateBridgeModIssues(BINDED_DATA, DIST);
   });
 
-  Grunt.registerTask("default", "default entry", function () {
+  Grunt.registerTask("async_puppeter", "test link", function () {
+    var done = this.async();
+    let issuesURLforTest = [];
+    BINDED_DATA.forEach(function (item) {
+      issuesURLforTest.push(item.hrefGitHub, item.hrefGitLab);
+    });
+    testPuputer(issuesURLforTest, done);
+  });
+
+  Grunt.registerTask("test", "test entry", () => {
+    Grunt.task.run("bind");
+    Grunt.task.run("async_puppeter");
+  });
+
+  Grunt.registerTask("default", "default entry", () => {
     Grunt.task.run("bind");
     Grunt.task.run("clean");
     Grunt.task.run("generateHTML");
@@ -198,14 +213,16 @@ function createModInfo(nameFile, displayName, displayImage, hrefGitLab, hrefGitH
 }
 
 function generateBridgeModIssues(arrayModInformations, output) {
-  var PATTERN_BIND_MOD_DISPLAY_NAME = "{{ BIND_MOD_DISPLAY_NAME }}";
-  var PATTERN_BIND_MOD_DISPLAY_IMAGE = "{{ BIND_MOD_DISPLAY_IMAGE }}";
-  var PATTERN_BIND_HREF_GITLAB = "{{ BIND_HREF_GITLAB }}";
-  var PATTERN_BIND_HREF_GITHUB = "{{ BIND_HREF_GITHUB }}";
+  let PATTERN_BIND_LIST_MODS = "{{ BIND_LIST_MODS }}", listMods = "";
+  let PATTERN_BIND_MOD_DISPLAY_NAME = "{{ BIND_MOD_DISPLAY_NAME }}";
+  let PATTERN_BIND_MOD_DISPLAY_IMAGE = "{{ BIND_MOD_DISPLAY_IMAGE }}";
+  let PATTERN_BIND_HREF_GITLAB = "{{ BIND_HREF_GITLAB }}";
+  let PATTERN_BIND_HREF_GITHUB = "{{ BIND_HREF_GITHUB }}";
   if (!TEMPLATE_HTML.includes(PATTERN_BIND_MOD_DISPLAY_NAME)) throw new Error("Invalide template html, not found pattern display name");
   if (!TEMPLATE_HTML.includes(PATTERN_BIND_MOD_DISPLAY_IMAGE)) throw new Error("Invalide template html, not found pattern display image");
   if (!TEMPLATE_HTML.includes(PATTERN_BIND_HREF_GITLAB)) throw new Error("Invalide template html, not found pattern href GitLab");
   if (!TEMPLATE_HTML.includes(PATTERN_BIND_HREF_GITHUB)) throw new Error("Invalide template html, not found pattern href GitHub");
+  if (!TEMPLATE_INDEX.includes(PATTERN_BIND_LIST_MODS)) throw new Error("Invalide index html, not found pattern list mods");
 
   arrayModInformations.forEach(function (item) {
     try {
@@ -216,8 +233,90 @@ function generateBridgeModIssues(arrayModInformations, output) {
           .replace(new RegExp(PATTERN_BIND_HREF_GITLAB, "g"), item.hrefGitLab)
           .replace(new RegExp(PATTERN_BIND_HREF_GITHUB, "g"), item.hrefGitHub)
       );
+      listMods += "<li><a href='" + item.nameFile + ".html' title='open bridge issue'>" + item.displayName + "</a></li>";
     } catch (e) {
       console.error(e);
     }
   });
+
+  try {
+    fs.writeFileSync(path.resolve(output, "index.html"), TEMPLATE_INDEX.replace(new RegExp(PATTERN_BIND_LIST_MODS, "g"), listMods));
+  } catch (error) {
+    console.error(e);
+  }
+
+}
+
+async function testPuputer(URLs, done) {
+  console.debug("test puputer");
+  // start browser
+  const instanceBrowser = await puppeteer.launch({ args: ['--lang=en-GB,en'] }).catch((e) => {
+    console.error(e);
+    process.exit(-1);
+  });
+  // Create new page
+  const instancePage = await instanceBrowser.newPage().catch((e) => {
+    console.error(e);
+    process.exit(-1);
+  });
+  // randomize view port
+  await instancePage.setViewport({
+    width: 1920 + Math.floor(Math.random() * 100), height: 3000 + Math.floor(Math.random() * 100),
+    deviceScaleFactor: 1,
+    hasTouch: false,
+    isLandscape: false,
+    isMobile: false,
+  }).catch((e) => {
+    console.error(e);
+    process.exit(-1);
+  });
+  // user agent from chrome
+  await instancePage.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36")
+    .catch((e) => {
+      console.error(e);
+      process.exit(-1);
+    });
+  // SET ENGLISH
+  await instancePage.setExtraHTTPHeaders({
+    'Accept-Language': 'en'
+  });
+
+  for (const url of URLs) {
+    let catchError = false;
+    await instancePage
+      .goto(url)
+      .catch((e) => {
+        console.warn(`invalide data for: ${url}`);
+        console.error(e);
+      });
+
+    if (!catchError) {
+      let valideEvaluate = await instancePage
+        .evaluate(() => {
+          if (window.location.href.includes("gitlab") || window.location.href.includes("github")) {
+            let k = document.querySelectorAll(`a[href*="${window.location.pathname}"]`);
+            return k ? k.length > 0 : false;
+          }
+
+          else {
+            return "Invalide URL !!!";
+          }
+        })
+        .catch((e) => {
+          console.warn(`invalide data for: ${url}`);
+          console.error(e);
+        });
+
+      console.warn(`result "${valideEvaluate}" for: ${url}`);
+    }
+  }
+
+  // CLOSE INSTANCE
+  await instanceBrowser.close()
+    .catch((e) => {
+      console.error(e);
+      process.exit(-1);
+    });
+
+  done(true);
 }
