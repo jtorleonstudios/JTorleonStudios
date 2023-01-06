@@ -10,8 +10,8 @@ Official account of the JTorLeon Studios team
 
 </div>
 
-<div style="text-align:center" align="center">
+<div style="text-align:center" align="center"> 
   
-![todo github readme]([https://github-readme-stats.vercel.app/api?username=jtorleonstudios&show_icons=true&theme=vue-dark%22%3E](https://raw.githubusercontent.com/jtorleonstudios/JTorleonStudios/main/png/todo.png))
+![todo github readme](https://github.com/jtorleonstudios/JTorleonStudios/blob/main/png/todo.png)
 
 </div>
