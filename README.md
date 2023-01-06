@@ -9,3 +9,9 @@ Official account of the JTorLeon Studios team
 ![stats github readme](https://github-readme-stats.vercel.app/api?username=jtorleonstudios&show_icons=true&theme=vue-dark%22%3E)
 
 </div>
+
+<div style="text-align:center" align="center">
+  
+![todo github readme]([https://github-readme-stats.vercel.app/api?username=jtorleonstudios&show_icons=true&theme=vue-dark%22%3E](https://raw.githubusercontent.com/jtorleonstudios/JTorleonStudios/main/png/todo.png))
+
+</div>
