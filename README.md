@@ -10,8 +10,8 @@ Official account of the JTorLeon Studios team
 
 </div>
 
-<div style="text-align:center" align="center"> 
+<div style="text-align:center" align="center"><a href="https://github.com/users/jtorleonstudios/projects/1/views/4" title="open todo">
   
 ![todo github readme](https://github.com/jtorleonstudios/JTorleonStudios/blob/main/png/todo.png)
 
-</div>
+</a></div>
