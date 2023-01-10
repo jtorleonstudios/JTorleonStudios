@@ -15,3 +15,11 @@ Official account of the JTorLeon Studios team
 ![todo github readme](https://github.com/jtorleonstudios/JTorleonStudios/blob/main/png/todo.png)
 
 </a></div>
+
+<div style="text-align:center" align="center"><a href="https://www.patreon.com/jtorleon?fan_landing=true" title="open todo">
+  
+![patreon member forever](https://github.com/jtorleonstudios/JTorleonStudios/blob/main/png/patreon.png)
+
+</a></div>
+
+ 
