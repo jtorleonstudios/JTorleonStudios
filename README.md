@@ -1,5 +1,5 @@
-![banner JTorLeon Studios]([https://gitlab.com/scs_torleon/hub-awesome-dungeon/-/raw/main/assets/BH_JTL_Header2.png](https://raw.githubusercontent.com/jtorleonstudios/JTorleonStudios/main/bh_jtl_header2.png))
-  
+![banner](https://raw.githubusercontent.com/jtorleonstudios/JTorleonStudios/main/bh_jtl_header2.png)
+
 # Welcome !
 
 Official account of the JTorLeon Studios team
